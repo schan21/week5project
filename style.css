@@ -36,7 +36,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 }
 .previews img.selected {
 	background: #999;
-
 }
 .full {
 	float: left;
