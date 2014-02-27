@@ -30,7 +30,9 @@
 
   <script>
   $(document).ready(function(){
-    var thumbnails = 
+    $(".previews img").on("click", function(){
+      $(this).toggleClass(".selected");
+    });
   });
   </script>
 
