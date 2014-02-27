@@ -25,15 +25,22 @@
     </div>
   </div>
   
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="jquery.js"></script>
   <script src="fancybox/jquery.fancybox.js?v=2.1.4"></script>
 
   <script>
   $(document).ready(function(){
-    $('.previews img').on('click', function(){
-      $(this).toggleClass('selected')
+    $('.previews a').on('click', function(){
+      $('.previews a').removeClass('selected');
+      $(this).toggleClass('selected');
+      // Get thumbnail for gallery
+      var largephotos = $(this).attr('data-full');
+      $('.full img').attr('src',largephotos);
+
     });
+
   });
+
   </script>
 
 
