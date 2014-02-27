@@ -3,6 +3,7 @@
 <head>
   <title>jQuery Gallery</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
 </head>
 <body>
   <div class="container clearfix">
@@ -26,7 +27,7 @@
   </div>
   
   <script src="jquery.js"></script>
-  <script src="fancybox/jquery.fancybox.js?v=2.1.4"></script>
+  <script src="fancybox/jquery.fancybox.js"></script>
 
   <script>
   $(document).ready(function(){
@@ -36,9 +37,11 @@
       // Get thumbnail for gallery
       var largephotos = $(this).attr('data-full');
       $('.full img').attr('src',largephotos);
-
     });
-
+    $('.full img').on('click', function(){
+      var largeimage = $(this).attr('src');
+      $.fancybox.open(largeimage);
+    });
   });
 
   </script>
