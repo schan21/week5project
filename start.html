@@ -30,19 +30,25 @@
   <script src="fancybox/jquery.fancybox.js"></script>
 
   <script>
-  $(document).ready(function(){
-    $('.previews a').on('click', function(){
-      $('.previews a').removeClass('selected');
-      $(this).toggleClass('selected');
+    $(document).ready(function(){
+      $('.previews a').on('click', function(){
+        $('.previews a').removeClass('selected');
+        $(this).toggleClass('selected');
       // Get thumbnail for gallery
       var largephotos = $(this).attr('data-full');
       $('.full img').attr('src',largephotos);
+
+      $('.full img').hide().load(function() {
+        $('.full img').fadeIn(800); 
+      });
     });
-    $('.full img').on('click', function(){
-      var largeimage = $(this).attr('src');
-      $.fancybox.open(largeimage);
+
+
+      $('.full img').on('click', function(){
+        var largeimage = $(this).attr('src');
+        $.fancybox.open(largeimage);
+      });
     });
-  });
 
   </script>
 
